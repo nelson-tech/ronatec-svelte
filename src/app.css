@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: "Exo";
+	src: local("Exo"), url("https://cdn.ronatec.us/fonts/Exo/Exo-VariableFont.woff2") format("woff2"),
+		url("https://cdn.ronatec.us/fonts/Exo/Exo-VariableFont.woff") format("woff");
+	font-weight: 1 999;
+	font-display: optional;
+}
+
+.danger ul {
+	list-style: inside disc;
+	margin-left: 1rem /** 16px */;
+	font-size: 1rem /** 14px */;
+	line-height: 1.25rem /** 20px */;
+}
+
+.flip {
+	transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+}

@@ -3,7 +3,7 @@
 	import Footer from "./footer/index.svelte"
 </script>
 
-<Header />
+<Header promo />
 <div class="p-8 max-w-6xl mx-auto">
 	<slot />
 </div>

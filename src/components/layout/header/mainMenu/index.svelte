@@ -37,7 +37,7 @@
 							title={menuItem.label}
 							class={getDesktopLinkStyle({
 								open: false,
-								path: menuItem.path,
+								path: menuItem.path || "/",
 							})}
 						>
 							{menuItem.label}
