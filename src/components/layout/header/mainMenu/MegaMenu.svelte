@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { Popover, PopoverButton, PopoverPanel, Transition } from "@rgossiaux/svelte-headlessui"
-	import { Icon } from "@steeze-ui/svelte-icon"
-	import { ChevronDown } from "@steeze-ui/heroicons"
+	import {
+		Popover,
+		PopoverButton,
+		PopoverPanel,
+		Transition,
+	} from "@rgossiaux/svelte-headlessui"
 	import type MenuItemType from "$lib/menus/types"
-	import { children } from "svelte/internal"
 
 	export let megaItem: MenuItemType
 	export let getStyle: (props: any) => string
@@ -22,10 +24,13 @@
 			})}
 		>
 			{megaItem.label}
-			<Icon
-				src={ChevronDown}
-				class={`transition ml-1 w-4 h-4 ${open && "transform rotate-180"} text-gray-400`}
-			/>
+			<div
+				class={`transition ml-1 w-4 h-4 text-gray-400 ${
+					open ? "transform rotate-180" : ""
+				}`}
+			>
+				<ChevronDownIcon />
+			</div>
 		</PopoverButton>
 	</div>
 	<Transition
@@ -55,7 +60,10 @@
 														? "mb-8"
 														: ""}
 												>
-													<p id={`desktop-featured-heading-${megaItem.id}`} class={headerStyle}>
+													<p
+														id={`desktop-featured-heading-${megaItem.id}`}
+														class={headerStyle}
+													>
 														<a
 															href={subColumn.path}
 															title={subColumn.label}
@@ -69,7 +77,10 @@
 														</a>
 													</p>
 
-													<ul aria-labelledby={`desktop-featured-heading-${megaItem.id}`} class="">
+													<ul
+														aria-labelledby={`desktop-featured-heading-${megaItem.id}`}
+														class=""
+													>
 														{#if subColumn.children}
 															{#each subColumn.children as item (subColumn.label + item.label + item.path)}
 																<li class="flex w-full group">
@@ -91,17 +102,27 @@
 										{/if}
 									</div>
 								{:else}
-									<p id={`desktop-featured-heading-${megaItem.id}`} class={headerStyle}>
+									<p
+										id={`desktop-featured-heading-${megaItem.id}`}
+										class={headerStyle}
+									>
 										<a href={column.path} title={column.label}>
 											{column.label}
 										</a>
 									</p>
 
-									<ul aria-labelledby={`desktop-featured-heading-${megaItem.id}`} class="mt-2">
+									<ul
+										aria-labelledby={`desktop-featured-heading-${megaItem.id}`}
+										class="mt-2"
+									>
 										{#if column.children}
 											{#each column.children as item (item.id)}
 												<li class="flex w-full group">
-													<a href={item.path} title={item.label} class="w-full hover:text-gray-800">
+													<a
+														href={item.path}
+														title={item.label}
+														class="w-full hover:text-gray-800"
+													>
 														<div class="py-2 w-full">
 															{item.label}
 														</div>

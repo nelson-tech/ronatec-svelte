@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-	import Layout from "$components/layout/index.svelte"
+	import Layout from "$components/Layout"
 </script>
 
 <Layout>

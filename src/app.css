@@ -4,10 +4,18 @@
 
 @font-face {
 	font-family: "Exo";
-	src: local("Exo"), url("https://cdn.ronatec.us/fonts/Exo/Exo-VariableFont.woff2") format("woff2"),
+	src: local("Exo"),
+		url("https://cdn.ronatec.us/fonts/Exo/Exo-VariableFont.woff2")
+			format("woff2"),
 		url("https://cdn.ronatec.us/fonts/Exo/Exo-VariableFont.woff") format("woff");
 	font-weight: 1 999;
 	font-display: optional;
+}
+
+body {
+	-webkit-tap-highlight-color: #5375a0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .danger ul {

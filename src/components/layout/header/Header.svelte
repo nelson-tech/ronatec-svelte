@@ -1,7 +1,11 @@
 <script lang="ts">
-	import Promo from "./Promo.svelte"
-	import Logo from "./Logo.svelte"
-	import MainMenu from "./mainMenu/index.svelte"
+	import Promo from "./Promo"
+	import Logo from "./Logo"
+	import MainMenu from "./MainMenu"
+	import UserNav from "./UserNav"
+
+	import MobileMenuButton from "./buttons/MobileMenu"
+	import SearchButton from "./buttons/Search"
 
 	export let promo = false
 </script>
@@ -20,14 +24,22 @@
 				<Logo />
 			</div>
 
+			<!-- Main Menu (lg+) -->
 			<MainMenu />
 
-			<!-- MobileNav -->
+			<!-- Left-side nav (lg-) -->
+			<div class="flex-1 flex items-center lg:hidden">
+				<MobileMenuButton />
+
+				<SearchButton />
+			</div>
 
 			<!-- Logo (lg-) -->
 			<div class="lg:hidden">
 				<Logo />
 			</div>
+
+			<UserNav />
 		</div>
 	</nav>
 </header>

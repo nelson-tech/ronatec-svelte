@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@rgossiaux/svelte-headlessui"
-	import { Icon } from "@steeze-ui/svelte-icon"
-	import { ChevronDown } from "@steeze-ui/heroicons"
-	import { children } from "svelte/internal"
+	import {
+		Menu,
+		MenuButton,
+		MenuItems,
+		Transition,
+	} from "@rgossiaux/svelte-headlessui"
 
 	type NormalizedMenuItem = {
 		path: string
@@ -28,10 +30,13 @@
 			})}
 		>
 			{menuItem.label}
-			<Icon
-				src={ChevronDown}
-				class={`transition ml-1 w-4 h-4 ${open && "transform rotate-180"} text-gray-400`}
-			/>
+			<div
+				class={`transition ml-1 w-4 h-4 text-gray-400 ${
+					open ? "transform rotate-180" : ""
+				}`}
+			>
+				<ChevronDownIcon />
+			</div>
 		</MenuButton>
 	</div>
 
